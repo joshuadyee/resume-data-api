@@ -1,7 +1,113 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# Student Data
+
+# Student.create!(
+#   first_name: "Cristian",
+#   last_name: "Bahena",
+#   email: "cris.bahena77@gmail.com",
+#   phone_number: "2245773570",
+#   bio: "My name is Cristian",
+#   linkedin_url: "http://www.linkedin.com/in/cristianbahena",
+#   twitter_handle: "n/a",
+#   website_url: "n/a",
+#   resume_url: "https://drive.google.com/file/d/1M5qtDMdljygp8eKuGo8ZQVL3XLaqTALo/view?usp=sharing",
+#   github_url: "https://github.com/cbahena3",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
+
+# Student.create!(
+#   first_name: "Joshua",
+#   last_name: "Yee",
+#   email: "joshyee16@gmail.com",
+#   phone_number: "6268082891",
+#   bio: "I'm from SoCal",
+#   linkedin_url: "https://www.linkedin.com/in/joshuadyee/",
+#   twitter_handle: "n/a",
+#   website_url: "n/a",
+#   resume_url: "https://docs.google.com/document/d/1mwS8McjwyMRBsLdEMWFkX96YZnDRMyPH2-Tx7v7jh1k/edit?usp=sharing",
+#   github_url: "https://github.com/joshuadyee",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
+
+# Student.create!(
+#   first_name: "Erika",
+#   last_name: "Gonzalez",
+#   email: "erikagonzz01@gmail",
+#   phone_number: "8046247266",
+#   bio: "I live in Virginia",
+#   linkedin_url: "http://www.linkedin.com/in/erikagonzalez2050",
+#   twitter_handle: "n/a",
+#   website_url: "n/a",
+#   resume_url: "https://docs.google.com/document/d/1A5Rd9pykEVQIxgB4VcDc-BUjOpkWF7w1LbzKxG8hvc0/edit?usp=sharing",
+#   github_url: "https://github.com/erikalgonzalez",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
+
+# Student.create!(
+#   first_name: "Eli",
+#   last_name: "Banchik",
+#   email: "ebanchik@gmail.com",
+#   phone_number: "9176752460",
+#   bio: "NYU '23 Grad",
+#   linkedin_url: "https://www.linkedin.com/in/elibanchik",
+#   twitter_handle: "n/a",
+#   website_url: "n/a",
+#   resume_url: "https://docs.google.com/document/d/1YM8mFzaruNA0d3V4R2mnU-UPtKpbgEenTC45iS_bZyQ/edit?usp=sharing",
+#   github_url: "https://github.com/ebanchik",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
+
+# Student.create!(
+#   first_name: "James",
+#   last_name: "Behlmann",
+#   email: "jmbehlmann@gmail.com",
+#   phone_number: "6364859276",
+#   bio: "I have a great bio",
+#   linkedin_url: "http://www.linkedin.com/in/jamesbehlmann",
+#   twitter_handle: "n/a",
+#   website_url: "https://www.youtube.com/jmbehlmann",
+#   resume_url: "https://docs.google.com/document/d/10kT9cX4xeHZPqQau9qhMc5Av8MAWFHsdbysumYnwlXs/edit?usp=sharing",
+#   github_url: "https://github.com/jmbehlmann",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
+
+# Student.create!(
+#   first_name: "Jayeon",
+#   last_name: "Hwang",
+#   email: "jayeon512@gmail.com",
+#   phone_number: "8477911283",
+#   bio: "Hello this is Jayeon",
+#   linkedin_url: "https://www.linkedin.com/in/jay512/",
+#   twitter_handle: "n/a",
+#   website_url: "n/a",
+#   resume_url: "https://docs.google.com/document/d/1GAe31gYKjWtFhfcU9Y_e30TrRerSV8NU7YQlEjlbvQ8/edit?usp=sharing",
+#   github_url: "https://github.com/jayeonhwang",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
+
+# Student.create!(
+#   first_name: "Stephanie",
+#   last_name: "Twardak",
+#   email: "stephanie@email.com",
+#   phone_number: "5554446262",
+#   bio: "My name is Stephanie",
+#   linkedin_url: "https://www.linkedin.com/in/stephanietwardak/",
+#   twitter_handle: "n/a",
+#   website_url: "n/a",
+#   resume_url: "n/a",
+#   github_url: "https://github.com/stwardak",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
