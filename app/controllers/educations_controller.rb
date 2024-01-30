@@ -1,4 +1,6 @@
 class EducationsController < ApplicationController
+  before_action :authenticate_student, except: [:index, :show]
+
   def index
     @educations = Education.all
     render :index
@@ -20,18 +22,28 @@ class EducationsController < ApplicationController
   end
   def update
     @education = Education.find_by(id: params[:id])
-    @education.update(
+    if current_student.id == @education.student_id
+      @education.update(
       start_date: params[:start_date] || @education.start_date,
       end_date: params[:end_date] || @education.end_date,
       degree: params[:degree] || @education.degree,
       university: params[:university] || @education.university,
       details: params[:details] || @education.details
-    )
-    render :show
+      )
+      render :show
+    else
+      render json: {message: "Please login with the right account."}
+    end
   end
+
   def destroy
     @education = Education.find_by(id: params[:id])
-    @education.destroy
-    render json:{message: "deleted succesfully"}
+    if current_student.id == @education.student_id
+      @education.destroy
+      render json:{message: "deleted succesfully"}
+    else
+      render json: {message: "Please login with the right account."}
+    end
   end
+
 end
