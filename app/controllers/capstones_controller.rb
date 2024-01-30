@@ -1,4 +1,6 @@
 class CapstonesController < ApplicationController
+  before_action :authenticate_student, except: [:index, :show]
+
   def index
     @capstones = Capstone.all
     render :index
@@ -19,17 +21,27 @@ class CapstonesController < ApplicationController
   end
   def update
     @capstone = Capstone.find_by(id: params[:id])
-    @capstone.update(
+    if current_student.id == @capstone.student_id
+      @capstone.update(
       name: params[:name] || @capstone.name,
       description: params[:description] || @capstone.description,
       url: params[:url] || @capstone.url,
       image: params[:image] || @capstone.image,
-    )
-    render :show
+      )
+      render :show
+    else
+      render json: {message: "Please login with the right account."}
+    end
   end
+
   def destroy
     @capstone = Capstone.find_by(id: params[:id])
-    @capstone.destroy
-    render json:{message: "deleted succesfully"}
+    if current_student.id == @capstone.student_id
+      @capstone.destroy
+      render json:{message: "deleted succesfully"}
+    else
+      render json: {message: "Please login with the right account."}
+    end
   end
+
 end
