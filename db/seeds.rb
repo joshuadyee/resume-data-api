@@ -111,3 +111,20 @@
 #   password: "password",
 #   password_confirmation: "password"
 # )
+
+# Skill Data
+
+# Skill.create!(skill_name: "Ruby")
+# Skill.create!(skill_name: "JavaScript")
+# Skill.create!(skill_name: "HTML")
+# Skill.create!(skill_name: "CSS")
+# Skill.create!(skill_name: "SQL")
+# Skill.create!(skill_name: "Ruby on Rails")
+# Skill.create!(skill_name: "React.js")
+# Skill.create!(skill_name: "Bootstrap")
+# Skill.create!(skill_name: "Postgres")
+# Skill.create!(skill_name: "APIs")
+# Skill.create!(skill_name: "Node/npm")
+# Skill.create!(skill_name: "Git")
+# Skill.create!(skill_name: "GitHub")
+
