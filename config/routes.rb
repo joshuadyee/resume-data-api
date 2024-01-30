@@ -41,4 +41,6 @@ Rails.application.routes.draw do
   patch "/capstones/:id" => "capstones#update"
   delete "capstones/:id" => "capstones#destroy"
 
+  #login route
+  post "/sessions" => "sessions#create"
 end
