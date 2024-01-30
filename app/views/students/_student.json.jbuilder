@@ -1,3 +1,4 @@
+json.id student.id
 json.first_name student.first_name
 json.last_name student.last_name
 json.email student.email
@@ -9,4 +10,6 @@ json.website_url student.website_url
 json.resume_url student.resume_url
 json.github_url student.github_url
 json.photo student.photo
-json.password_digest student.password_digest
+json.skills student.skills.map do |skill|
+  json.skill_name skill.skill_name
+end
