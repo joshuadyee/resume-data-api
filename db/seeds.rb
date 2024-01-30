@@ -16,6 +16,7 @@
 #   password_confirmation: "password"
 # )
 
+
 # Student.create!(
 #   first_name: "Joshua",
 #   last_name: "Yee",
@@ -107,6 +108,22 @@
 #   website_url: "n/a",
 #   resume_url: "n/a",
 #   github_url: "https://github.com/stwardak",
+#   photo: "n/a",
+#   password: "password",
+#   password_confirmation: "password"
+# )
+
+# Student.create!(
+#   first_name: "Joe",
+#   last_name: "McGuy",
+#   email: "jm@email.com",
+#   phone_number: "1112223333",
+#   bio: "I'm the test",
+#   linkedin_url: "http://www.linkedin.com/",
+#   twitter_handle: "n/a",
+#   website_url: "n/a",
+#   resume_url: "https://drive.google.com/file/d/1M5qtDMdljygp8eKuGo8ZQVL3XLaqTALo/view?usp=sharing",
+#   github_url: "https://github.com/",
 #   photo: "n/a",
 #   password: "password",
 #   password_confirmation: "password"

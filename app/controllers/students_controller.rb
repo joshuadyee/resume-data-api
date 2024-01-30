@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_student, except: [:index, :show]
+  
   def index
     @students = Student.all
     render :index
@@ -24,7 +26,7 @@ class StudentsController < ApplicationController
       photo: params[:photo],
       password_digest: params[:password_digest],
     )
-    if @student.save!
+    if @student.save
       render json: {message: "Student successfully created"}, status: :created
     else
       render json: {errors: @student.errors.full_messages}, status: :bad_request
@@ -45,17 +47,23 @@ class StudentsController < ApplicationController
     @student.github_url = params[:github_url] || @student.github_url 
     @student.photo = params[:photo] || @student.photo 
     @student.password_digest = params[:password_digest] || @student.password_digest 
-
-    if @student.save!
-      render :show
-    else
-      render json: {message: @student.errors.full_messages}, status: :unprocessable_entity
+    
+    if current_student.id == @student.id
+      if @student.save
+        render :show
+      else
+        render json: {message: "Please login with the correct account"}, status: :unprocessable_entity
+      end
     end
   end
 
   def destroy
     @student = Student.find_by(id: params[:id])
-    @student.destroy
-    render json: {message: "Student account successfully deleted"}
+    if current_student.id == @student.id
+      @student.destroy
+      render json: {message: "Student account successfully deleted"}
+    else
+      render json: {message: "Please login with the correcr account"}
+    end
   end
 end
