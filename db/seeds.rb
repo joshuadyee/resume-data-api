@@ -128,3 +128,46 @@
 # Skill.create!(skill_name: "Git")
 # Skill.create!(skill_name: "GitHub")
 
+# Student Skill Data
+
+# i = 1
+# while i <= Skill.all.count
+#   StudentSkill.create!(student_id: 1, skill_id: i)
+#   i += 1
+# end
+
+# i2 = 1
+# while i2 <= Skill.all.count
+#   StudentSkill.create!(student_id: 2, skill_id: i2)
+#   i2 += 1
+# end
+
+# i3 = 1
+# while i3 <= Skill.all.count
+#   StudentSkill.create!(student_id: 3, skill_id: i3)
+#   i3 += 1
+# end
+
+# i4 = 1
+# while i4 <= Skill.all.count
+#   StudentSkill.create!(student_id: 4, skill_id: i4)
+#   i4 += 1
+# end
+
+# i5 = 1
+# while i5 <= Skill.all.count
+#   StudentSkill.create!(student_id: 5, skill_id: i5)
+#   i5 += 1
+# end
+
+# i6 = 1
+# while i6 <= Skill.all.count
+#   StudentSkill.create!(student_id: 6, skill_id: i6)
+#   i6 += 1
+# end
+
+# i7 = 1
+# while i7 <= Skill.all.count
+#   StudentSkill.create!(student_id: 7, skill_id: i7)
+#   i7 += 1
+# end
