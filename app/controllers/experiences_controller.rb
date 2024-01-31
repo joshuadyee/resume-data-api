@@ -2,13 +2,19 @@ class ExperiencesController < ApplicationController
   before_action :authenticate_student, except: [:index, :show]
 
   def index
-    @experiences = Experience.all
+    if params[:student_id].present?
+      @experiences = Experience.where(student_id: params[:student_id])
+    else
+      @experiences = Experience.all
+    end
     render :index
   end
+
   def show
     @experience = Experience.find_by(id: params[:id])
     render :show
   end
+
   def create
     @experience = Experience.create(
       student_id: current_student.id,
@@ -22,6 +28,7 @@ class ExperiencesController < ApplicationController
       render :show
     end
   end
+
   def update
     @experience = Experience.find_by(id: params[:id])
     if current_student.id == @experience.student_id
@@ -37,6 +44,7 @@ class ExperiencesController < ApplicationController
       render json: {message: "Please login with the right account."}
     end
   end
+  
   def destroy
     @experience = Experience.find_by(id: params[:id])
     if current_student.id == @experience.student_id
