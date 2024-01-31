@@ -2,13 +2,19 @@ class EducationsController < ApplicationController
   before_action :authenticate_student, except: [:index, :show]
 
   def index
-    @educations = Education.all
+    if params[:student_id].present?
+      @educations = Education.where(student_id: params[:student_id])
+    else
+      @educations = Education.all
+    end
     render :index
   end
+
   def show
     @education = Education.find_by(id: params[:id])
     render :show
   end
+
   def create
     @education = Education.create(
       student_id: params[:student_id],
@@ -20,6 +26,7 @@ class EducationsController < ApplicationController
     )
     render :show
   end
+
   def update
     @education = Education.find_by(id: params[:id])
     if current_student.id == @education.student_id

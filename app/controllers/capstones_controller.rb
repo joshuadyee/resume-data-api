@@ -2,13 +2,19 @@ class CapstonesController < ApplicationController
   before_action :authenticate_student, except: [:index, :show]
 
   def index
-    @capstones = Capstone.all
+    if params[:student_id].present?
+      @capstones = Capstones.where(student_id: params[:student_id])
+    else
+      @capstones = Capstones.all
+    end
     render :index
   end
+
   def show
     @capstone = Capstone.find_by(id: params[:id])
     render :show
   end
+
   def create
     @capstone = Capstone.create(
       student_id: params[:student_id],
@@ -19,6 +25,7 @@ class CapstonesController < ApplicationController
     )
     render :show
   end
+
   def update
     @capstone = Capstone.find_by(id: params[:id])
     if current_student.id == @capstone.student_id
