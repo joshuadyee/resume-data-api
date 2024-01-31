@@ -17,13 +17,15 @@ class CapstonesController < ApplicationController
 
   def create
     @capstone = Capstone.create(
-      student_id: params[:student_id],
+      student_id: current_student.id,
       name: params[:name],
       description: params[:description],
       url: params[:url],
       image: params[:image],
     )
-    render :show
+    if @capstone.valid?
+      render :show
+    end
   end
 
   def update
@@ -50,5 +52,4 @@ class CapstonesController < ApplicationController
       render json: {message: "Please login with the right account."}
     end
   end
-
 end

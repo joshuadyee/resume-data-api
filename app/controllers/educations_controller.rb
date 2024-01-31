@@ -17,14 +17,16 @@ class EducationsController < ApplicationController
 
   def create
     @education = Education.create(
-      student_id: params[:student_id],
+      student_id: current_student.id,
       start_date: params[:start_date],
       end_date: params[:end_date],
       degree: params[:degree],
       university: params[:university],
       details: params[:details]
     )
-    render :show
+    if @education.valid?
+      render :show
+    end
   end
 
   def update
