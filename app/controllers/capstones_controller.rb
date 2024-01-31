@@ -2,7 +2,11 @@ class CapstonesController < ApplicationController
   before_action :authenticate_student, except: [:index, :show]
 
   def index
-    @capstones = Capstone.all
+    if params[:student_id].present?
+      @capstones = Capstones.where(student_id: params[:student_id])
+    else
+      @capstones = Capstones.all
+    end
     render :index
   end
 
