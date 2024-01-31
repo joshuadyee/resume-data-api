@@ -49,11 +49,10 @@ class StudentsController < ApplicationController
     @student.password_digest = params[:password_digest] || @student.password_digest 
     
     if current_student.id == @student.id
-      if @student.save
-        render :show
-      else
-        render json: {message: "Please login with the correct account"}, status: :unprocessable_entity
-      end
+      @student.save
+      render :show
+    else
+      render json: {message: "Please log into the correct account"}, status: :unprocessable_entity
     end
   end
 
