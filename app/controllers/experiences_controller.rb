@@ -2,7 +2,11 @@ class ExperiencesController < ApplicationController
   before_action :authenticate_student, except: [:index, :show]
 
   def index
-    @experiences = Experience.all
+    if params[:student_id].present?
+      @experiences = Experience.where(student_id: params[:student_id])
+    else
+      @experiences = Experience.all
+    end
     render :index
   end
   def show
