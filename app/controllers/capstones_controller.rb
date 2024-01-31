@@ -5,20 +5,25 @@ class CapstonesController < ApplicationController
     @capstones = Capstone.all
     render :index
   end
+
   def show
     @capstone = Capstone.find_by(id: params[:id])
     render :show
   end
+
   def create
     @capstone = Capstone.create(
-      student_id: params[:student_id],
+      student_id: current_student.id,
       name: params[:name],
       description: params[:description],
       url: params[:url],
       image: params[:image],
     )
-    render :show
+    if @capstone.valid?
+      render :show
+    end
   end
+
   def update
     @capstone = Capstone.find_by(id: params[:id])
     if current_student.id == @capstone.student_id
@@ -43,5 +48,4 @@ class CapstonesController < ApplicationController
       render json: {message: "Please login with the right account."}
     end
   end
-
 end
