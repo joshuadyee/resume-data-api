@@ -9,10 +9,12 @@ class ExperiencesController < ApplicationController
     end
     render :index
   end
+
   def show
     @experience = Experience.find_by(id: params[:id])
     render :show
   end
+
   def create
     @experience = Experience.create(
       student_id: params[:student_id],
@@ -24,6 +26,7 @@ class ExperiencesController < ApplicationController
     )
     render :show
   end
+
   def update
     @experience = Experience.find_by(id: params[:id])
     if current_student.id == @experience.student_id
@@ -39,6 +42,7 @@ class ExperiencesController < ApplicationController
       render json: {message: "Please login with the right account."}
     end
   end
+  
   def destroy
     @experience = Experience.find_by(id: params[:id])
     if current_student.id == @experience.student_id
